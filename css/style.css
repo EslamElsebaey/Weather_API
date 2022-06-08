@@ -183,4 +183,10 @@ header{
     .navbar{
         padding:  10px 0 ;
     }
+    header{
+        padding: 50px 0;
+    }
+    .forecast{
+        margin-top: -200px;
+    }
 }
