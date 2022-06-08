@@ -40,6 +40,7 @@ async function getWeather (term){
     );
     let result = await response.json();
    weatherObj = result;
+   console.log(weatherObj);
    displayWeather();
 }
 
@@ -77,10 +78,9 @@ thrdDayWeather();
 function scndDayWeather() {
     scndDay.innerHTML = scndDayWord;
   scndDayIcon.src = weatherObj.forecast.forecastday[1].day.condition.icon;
-  scndDayCloud.innerHTML =
-    weatherObj.forecast.forecastday[1].day.condition.text;
-  scndDayMaxTemp.innerHTML = weatherObj.forecast.forecastday[1].day.maxtemp_c;
-  scndDayMinTemp.innerHTML = weatherObj.forecast.forecastday[1].day.mintemp_c;
+  scndDayCloud.innerHTML = weatherObj.forecast.forecastday[1].day.condition.text;
+  scndDayMaxTemp.innerHTML = `${weatherObj.forecast.forecastday[1].day.maxtemp_c}<sup>o</sup>C`;
+  scndDayMinTemp.innerHTML = `${weatherObj.forecast.forecastday[1].day.mintemp_c}<sup>o</sup>C`;
 }
 
 
@@ -90,8 +90,8 @@ function thrdDayWeather() {
     thrdDay.innerHTML = thrdDayWord;
   thrdDayIcon.src = weatherObj.forecast.forecastday[2].day.condition.icon;
   thrdDayCloud.innerHTML =weatherObj.forecast.forecastday[2].day.condition.text;
-  thrdDayMaxTemp.innerHTML = weatherObj.forecast.forecastday[2].day.maxtemp_c;
-  thrdDayMinTemp.innerHTML = weatherObj.forecast.forecastday[2].day.mintemp_c;
+  thrdDayMaxTemp.innerHTML = `${weatherObj.forecast.forecastday[2].day.maxtemp_c}<sup>o</sup>C`;
+  thrdDayMinTemp.innerHTML = `${weatherObj.forecast.forecastday[3].day.mintemp_c}<sup>o</sup>C`;
 }
 
 
