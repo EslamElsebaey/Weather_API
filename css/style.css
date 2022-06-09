@@ -57,6 +57,19 @@ header{
 #searchInput:focus{
     outline: none;
 }
+
+#tryToWrite{
+    background: #fff;
+    padding: 5px 3px;
+    border-radius: 5px;
+    border: 2px solid red;
+    margin-top: 7px;
+    font-size: 16px;
+    color: black;
+}
+
+
+
 .find{
      padding: 7px 37px;
     border-radius: 25px;

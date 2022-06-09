@@ -19,15 +19,24 @@ let thrdDayMinTemp = document.getElementById("thrdDayMinTemp");
 let scndDayWord = "";
 let thrdDayWord = "";
 let searchInput = document.getElementById("searchInput");
+let tryToWrite = document.getElementById("tryToWrite");
+let find = document.getElementById("find");
 
 
 
 // search country 
 
-searchInput.addEventListener("keyup", function () {
-  if (searchInput.value.length > 3) {
-    getWeather(searchInput.value);
+find.addEventListener("click", function () {
+  if(searchInput.value.length < 4){
+   tryToWrite.classList.remove("d-none");
+   searchInput.value = "";
+  }else{
+     tryToWrite.classList.add("d-none");
+     getWeather(searchInput.value);
   }
+    
+ 
+   
 });
  
 
@@ -40,7 +49,6 @@ async function getWeather (term){
     );
     let result = await response.json();
    weatherObj = result;
-   console.log(weatherObj);
    displayWeather();
 }
 
@@ -91,7 +99,7 @@ function thrdDayWeather() {
   thrdDayIcon.src = weatherObj.forecast.forecastday[2].day.condition.icon;
   thrdDayCloud.innerHTML =weatherObj.forecast.forecastday[2].day.condition.text;
   thrdDayMaxTemp.innerHTML = `${weatherObj.forecast.forecastday[2].day.maxtemp_c}<sup>o</sup>C`;
-  thrdDayMinTemp.innerHTML = `${weatherObj.forecast.forecastday[3].day.mintemp_c}<sup>o</sup>C`;
+  thrdDayMinTemp.innerHTML = `${weatherObj.forecast.forecastday[2].day.mintemp_c}<sup>o</sup>C`;
 }
 
 
