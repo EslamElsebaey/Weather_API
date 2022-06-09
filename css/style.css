@@ -56,6 +56,9 @@ header {
   color: #fff;
   font-size: 17px;
 }
+#searchInput::placeholder{
+  color: #fff;
+}
 #searchInput:focus {
   outline: none;
 }
@@ -210,4 +213,14 @@ header {
   .forecast {
     margin-top: -220px;
   }
+#searchInput{
+  padding: 15px 20px;
+}
+#searchInput::placeholder{
+  font-size: 15px;
+}
+.find{
+  padding: 6px 30px;
+  top: 8px;
+}
 }
