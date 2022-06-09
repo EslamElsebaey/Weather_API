@@ -22,17 +22,28 @@ let searchInput = document.getElementById("searchInput");
 let tryToWrite = document.getElementById("tryToWrite");
 let find = document.getElementById("find");
 
+
+// onloading focus on input 
+
+window.addEventListener("load", () => {
+  searchInput.focus();
+});
+
+
 // search country
 
 find.addEventListener("click", function () {
-  if (searchInput.value.length < 4) {
-    tryToWrite.classList.remove("d-none");
-    searchInput.value = "";
-  } else {
-    tryToWrite.classList.add("d-none");
-    getWeather(searchInput.value);
-  }
-});
+    if (searchInput.value.length < 4 || searchInput.value == "") {
+      tryToWrite.classList.remove("d-none");
+      searchInput.value = "";
+      searchInput.removeAttribute("placeholder");
+    } else {
+      tryToWrite.classList.add("d-none");
+      getWeather(searchInput.value);
+    }
+  });
+  
+
 
 // get weather
 
@@ -46,6 +57,9 @@ async function getWeather(term) {
 }
 
 getWeather("cairo");
+
+
+
 
 //  display Weather
 function displayWeather() {
