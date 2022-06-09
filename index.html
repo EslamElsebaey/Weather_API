@@ -1,117 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather API</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/all.css">
-  <link rel="stylesheet" href="css/style.css" />
-  <title>Weather API</title>
-</head>
-
-<body>
-
-  <div class="home">
-
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container d-flex align-items-center">
-        <a class="navbar-brand d-flex" href="#">
-          <img src="images/logo@2x.png" alt="">
-          <h3 class="text-white ms-3">Weather <br> <span>tagline goes here</span></h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-          </ul>
+  <body>
+    <div class="home">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container d-flex align-items-center">
+          <a class="navbar-brand d-flex" href="#">
+            <img src="images/logo@2x.png" alt="" />
+            <h3 class="text-white ms-3">
+              Weather <br />
+              <span>tagline goes here</span>
+            </h3>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <header>
-      <div class="container inputdiv position-relative  ">
-        <input type="text" class="w-100" id="searchInput">
-        <div id="tryToWrite" class="d-none">Try to write full Name</div>
-        <button class="btn find position-absolute" id="find">Find</button>
-      </div>
+      <header>
+        <div class="container inputdiv position-relative">
+          <input type="text" class="w-100" id="searchInput" />
+          <div id="tryToWrite" class="d-none">Try to write full Name</div>
+          <button class="btn find position-absolute" id="find">Find</button>
+        </div>
+      </header>
 
-    </header>
-
-
-    <div class="forecastall">
-      <div class="forecast">
-        <div class="container">
-          <div class="row gx-0">
-            <div class="col-lg-4 col-md-6">
-              <div class="forecast-item">
-                <div class="day-date">
-                  <div class="day float-start" id="day">
-                    Thursday
+      <div class="forecastall">
+        <div class="forecast">
+          <div class="container">
+            <div class="row gx-0">
+              <div class="col-lg-4 col-md-6">
+                <div class="forecast-item">
+                  <div class="day-date">
+                    <div class="day float-start" id="day">Thursday</div>
+                    <div class="date float-end" id="date">2June</div>
+                    <div class="clearfix"></div>
                   </div>
-                  <div class="date float-end" id="date">
-                    2June
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="forecast-details firstitem">
-                  <h5 class="mb-3" id="city">Londerzeel</h5>
-                  <div class="num" id="num">
-                    17<sup>o</sup>C <img src="images/116.png" alt="">
-                  </div>
-                  <span class="cloud" id="cloud">Partly cloudy</span>
-                  <div class="details d-flex">
-                    <div class="details-info ">
-                      <img src="images/icon-umberella.png" alt="">
-                      <small>20%</small>
+                  <div class="forecast-details firstitem">
+                    <h5 class="mb-3" id="city">Londerzeel</h5>
+                    <div class="num" id="num">
+                      17<sup>o</sup>C <img src="images/116.png" alt="" />
                     </div>
-                    <div class="details-info">
-                      <img src="images/icon-wind.png" alt="">
-                      <small>18km/h</small>
+                    <span class="cloud" id="cloud">Partly cloudy</span>
+                    <div class="details d-flex">
+                      <div class="details-info">
+                        <img src="images/icon-umberella.png" alt="" />
+                        <small>20%</small>
+                      </div>
+                      <div class="details-info">
+                        <img src="images/icon-wind.png" alt="" />
+                        <small>18km/h</small>
+                      </div>
+                      <div class="details-info">
+                        <img src="images/icon-compass.png" alt="" />
+                        <small>East</small>
+                      </div>
                     </div>
-                    <div class="details-info">
-                      <img src="images/icon-compass.png" alt="">
-                      <small>East</small>
-                    </div>
-
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="forecast-item  seconditem">
-                <div class="day text-center" id="scndDay">
-
+              <div class="col-lg-4 col-md-6">
+                <div class="forecast-item seconditem">
+                  <div class="day text-center" id="scndDay"></div>
+                  <div class="forecast-details text-white text-center">
+                    <img id="scndDayIcon" class="mb-3" alt="" />
+                    <h3 class="big-temp" id="scndDayMaxTemp">
+                      38<sup>o</sup>C
+                    </h3>
+                    <h5 class="small-temp mb-4" id="scndDayMinTemp">
+                      21.9<sup>o</sup>
+                    </h5>
+                    <div class="status" id="scndDayCloud"></div>
+                  </div>
                 </div>
-                <div class="forecast-details text-white text-center">
-                  <img id="scndDayIcon" class="mb-3" alt="">
-                  <h3 class="big-temp" id="scndDayMaxTemp">38<sup>o</sup>C</h3>
-                  <h5 class="small-temp mb-4" id="scndDayMinTemp">21.9<sup>o</sup></h5>
-                  <div class="status" id="scndDayCloud"></div>
-                </div>
-
-
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="forecast-item  thirditem">
-                <div class="day text-center" id="thrdDay">
-
+              <div class="col-lg-4 col-md-6">
+                <div class="forecast-item thirditem">
+                  <div class="day text-center" id="thrdDay"></div>
+                  <div class="forecast-details text-white text-center">
+                    <img
+                      src="images/113.png"
+                      id="thrdDayIcon"
+                      class="mb-3"
+                      alt=""
+                    />
+                    <h3 class="big-temp" id="thrdDayMaxTemp">
+                      38<sup>o</sup>C
+                    </h3>
+                    <h5 class="small-temp mb-4" id="thrdDayMinTemp">
+                      21.9<sup>o</sup>
+                    </h5>
+                    <div class="status" id="thrdDayCloud">Sunny</div>
+                  </div>
                 </div>
-                <div class="forecast-details text-white text-center">
-                  <img src="images/113.png" id="thrdDayIcon" class="mb-3" alt="">
-                  <h3 class="big-temp" id="thrdDayMaxTemp">38<sup>o</sup>C</h3>
-                  <h5 class="small-temp mb-4" id="thrdDayMinTemp">21.9<sup>o</sup></h5>
-                  <div class="status" id="thrdDayCloud">Sunny</div>
-                </div>
-
-
               </div>
             </div>
           </div>
@@ -119,23 +125,7 @@
       </div>
     </div>
 
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
