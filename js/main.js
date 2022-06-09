@@ -22,28 +22,33 @@ let searchInput = document.getElementById("searchInput");
 let tryToWrite = document.getElementById("tryToWrite");
 let find = document.getElementById("find");
 
-
-// onloading focus on input 
+// onloading focus on input
 
 window.addEventListener("load", () => {
   searchInput.focus();
 });
 
-
-// search country
+// find city you want
 
 find.addEventListener("click", function () {
-    if (searchInput.value.length < 4 || searchInput.value == "") {
-      tryToWrite.classList.remove("d-none");
-      searchInput.value = "";
-      searchInput.removeAttribute("placeholder");
-    } else {
-      tryToWrite.classList.add("d-none");
-      getWeather(searchInput.value);
-    }
-  });
-  
+  if (searchInput.value.length < 4 || searchInput.value == "") {
+    tryToWrite.classList.remove("d-none");
+    searchInput.value = "";
+    searchInput.removeAttribute("placeholder");
+  } else {
+    tryToWrite.classList.add("d-none");
+    getWeather(searchInput.value);
+  }
+});
 
+// use enter key to find
+
+searchInput.addEventListener("keypress", function (e) {
+  if (e.key == "Enter") {
+    e.preventDefault();
+    find.click();
+  }
+});
 
 // get weather
 
@@ -51,15 +56,17 @@ async function getWeather(term) {
   let response = await fetch(
     `https://api.weatherapi.com/v1/forecast.json?key=1c38be8040b44f4ca57114247220806&q=${term}&days=3`
   );
-  let result = await response.json();
-  weatherObj = result;
-  displayWeather();
+  if (response.status != 200) {
+    tryToWrite.classList.remove("d-none");
+    tryToWrite.innerHTML = "write correct name of city";
+  } else {
+    let result = await response.json();
+    weatherObj = result;
+    displayWeather();
+  }
 }
 
 getWeather("cairo");
-
-
-
 
 //  display Weather
 function displayWeather() {
