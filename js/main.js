@@ -106,8 +106,8 @@ function displayWeather() {
     weatherObj.current.temp_c
   )}<sup>o</sup>C <img src="${weatherObj.current.condition.icon}" alt="">`;
   cloud.innerHTML = weatherObj.current.condition.text;
-  scndDayWord = weekday[weekday.indexOf(today) + 1];
-  thrdDayWord = weekday[weekday.indexOf(today) + 2];
+  scndDayWord = weekday[new Date(weatherObj.forecast.forecastday[1].date).getDay()];
+  thrdDayWord = weekday[new Date(weatherObj.forecast.forecastday[2].date).getDay()];
   scndDayWeather();
   thrdDayWeather();
 }
