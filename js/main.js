@@ -37,7 +37,7 @@ find.addEventListener("click", function () {
     searchInput.removeAttribute("placeholder");
   } else {
     tryToWrite.classList.add("d-none");
-    getWeather(searchInput.value);
+   p getWeather(searchInut.value);
   }
 });
 

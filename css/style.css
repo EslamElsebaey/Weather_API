@@ -42,6 +42,7 @@ a {
 header {
   background-image: url(../images/banner.png);
   background-size: cover;
+  background-position: center center;
   height: 360px;
   padding: 70px 0;
 }
